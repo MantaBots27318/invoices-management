@@ -132,7 +132,7 @@ In an environemnt in which docker is available :
 
    ./scripts/launch.sh -k <MY_TOKEN> -p <MY ONEDRIVE TREE ROOT FOLDER> -o <RESULTING EXCEL SHEET NAME>
 
-..code:bashrc
+
 
 Issues
 ======
