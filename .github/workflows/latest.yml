@@ -1,0 +1,39 @@
+# -------------------------------------------------------
+# Copyright (c) [2024] FASNY
+# All rights reserved
+# -------------------------------------------------------
+# Automatic invoices processing
+# -------------------------------------------------------
+# Nadège LEMPERIERE, @6th november 2024
+# Latest revision: 6th november 2024
+# -------------------------------------------------------
+
+name: Invoice Processing Tool Latest Check
+
+on:
+    push:
+        branches:
+            - '**'
+
+jobs:
+
+    check:
+        name: Analyze Package
+        runs-on: ubuntu-latest
+        container:
+          image: docker://python:latest
+          options: --entrypoint /bin/bash
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@master
+
+            - name: Installing dependencies
+              run: pip install -r requirements-test.txt
+
+            - name: Linting module
+              continue-on-error: true
+              run: pylint process.py
+
+            - name: Run pip-audit to check for vulnerabilities
+              continue-on-error: true
+              run: pip-audit -r requirements.txt --format json

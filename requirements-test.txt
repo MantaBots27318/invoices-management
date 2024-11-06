@@ -1,0 +1,2 @@
+pylint==3.2.7 
+pip_audit==2.7.3
