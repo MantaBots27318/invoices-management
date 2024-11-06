@@ -81,7 +81,7 @@ Configuring the app
 .. image:: doc/azure-app-api-permissions.png
 
 
-1. Go to Certificates and secrets and create a secret. Store it in a safe place:
+3. Go to Certificates and secrets and create a secret. Store it in a safe place:
 
 
 .. image:: doc/azure-app-secret.png
