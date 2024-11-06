@@ -133,6 +133,10 @@ In an environemnt in which docker is available :
    ./scripts/launch.sh -k <MY_TOKEN> -p <MY ONEDRIVE TREE ROOT FOLDER> -o <RESULTING EXCEL SHEET NAME>
 
 
+Note that in this last case, the excel sheet shall be produced in a directory mounted in docker. By default, only the repository path is mounted as home. 
+If you want the file to be produced elsewhere, modify the scripts accordingly to mount the output path in the docker container
+
+
 
 Issues
 ======

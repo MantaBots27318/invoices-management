@@ -72,9 +72,11 @@ class Workflow:
         Workflow.__process_folder(self.__logger, self.__header, self.__path, sheet)
 
         # Save workbook to Excel file
-        workbook.save(self.__output)
-
-        self.__logger.info('---> Excel sheet generated %s', self.__output)
+        try:
+            workbook.save(self.__output)
+            self.__logger.info('---> Excel sheet generated %s', self.__output)
+        except Exception as e:
+            self.__logger.error('Failed to save Excel sheet: %s', e)
 
     # Function to list files and folders in a OneDrive folder
     @staticmethod

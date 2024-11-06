@@ -16,7 +16,7 @@ scriptpath=`dirname $script`
 # Use python docker to launch analysis
 docker run -it --rm \
        --entrypoint /bin/bash \
-       -v $scriptpath/../:/home \
+       -v $scriptpath/../:/home\
        --workdir /home \
        python:latest \
        /home/scripts/lint.sh

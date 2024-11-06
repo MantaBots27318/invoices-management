@@ -17,5 +17,6 @@ scriptpath=`dirname $script`
 docker run -it --rm \
        --entrypoint /bin/bash \
        -v $scriptpath/../:/home \
+       --workdir /home \
        python:latest \
        /home/scripts/process.sh $@
